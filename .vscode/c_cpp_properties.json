@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/**",
+                "/usr/local/include",
+                "/usr/src/linux-headers-5.19.0-43-generic/include",
+                "/usr/src/linux-headers-5.19.0-43-generic/arch/x86/include",
+                "/usr/src/linux-headers-5.19.0-43-generic/arch/x86/include/generated",
+                "/usr/lib/modules/5.19.0-43-generic/build/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/11/include"
+            ],
+            "defines": [
+                "KBUILD_MODNAME=\"fibdrv_new\"",
+                "__GNUC__",
+                "__KERNEL__"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

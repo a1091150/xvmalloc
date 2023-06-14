@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "fs.h": "c",
+        "kdev_t.h": "c",
+        "kernel.h": "c",
+        "bitops.h": "c",
+        "log2.h": "c",
+        "stdarg.h": "c",
+        "align.h": "c",
+        "limits.h": "c",
+        "bn.h": "c",
+        "types.h": "c",
+        "slab.h": "c",
+        "climits": "c",
+        "init.h": "c",
+        "stdbool.h": "c",
+        "time.h": "c",
+        "clockid_t.h": "c",
+        "string.h": "c",
+        "unistd.h": "c",
+        "zsmalloc.h": "c",
+        "xvmalloc_int.h": "c",
+        "test.h": "c",
+        "xvmalloc.h": "c",
+        "mman.h": "c"
+    }
+}
