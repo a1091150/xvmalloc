@@ -47,6 +47,7 @@ void *alloc_page()
     if (page_index == -1)
         return NULL;
 
+    set_page_used(page_index);
     char *addr = start_addr;
     addr = addr + page_index * PAGE_SIZE;
     return addr;
@@ -90,7 +91,7 @@ void set_page_used(int page_index)
 {
     u64 div = page_index >> 6;
     u64 rem = page_index & ((1 << 6) - 1);
-    u64 set_bit = rem ? ((1UL << 63) >> (rem - 1)) : (1UL << 63);
+    u64 set_bit = (1UL << 63) >> rem;
     pages_used[div] |= set_bit;
 }
 
