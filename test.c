@@ -103,7 +103,7 @@ void set_page_unused(int page_index)
     pages_used[div] &= ~set_bit;
 }
 
-void good()
+void test_alloc()
 {
     struct xv_pool *pool = xv_create_pool();
     struct page *page;
@@ -134,7 +134,7 @@ int main()
     if (!start_addr || !pages_used)
         return 0;
 
-    good();
+    test_alloc();
 
     return 0;
 }
