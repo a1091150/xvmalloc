@@ -102,7 +102,7 @@ void set_page_unused(int page_index)
 {
     u64 div = page_index >> 6;
     u64 rem = page_index & ((1 << 6) - 1);
-    u64 set_bit = rem ? ((1UL << 63) >> (rem - 1)) : (1UL << 63);
+    u64 set_bit = (1UL << 63) >> rem;
     pages_used[div] &= ~set_bit;
 }
 
