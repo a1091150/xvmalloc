@@ -6,16 +6,18 @@
 #include "xvmalloc.h"
 #include "xvmalloc_int.h"
 
-void set_page_unused(int page_index);
-int64_t find_page_unused();
-void set_page_used(int page_index);
-
+/* Memory for page array */
 static size_t MAX_PAGES;
 void *start_addr = NULL;
 
+/* A set bit represents page whether in-use or free.*/
+void set_page_unused(int page_index);
+int64_t find_page_unused();
+void set_page_used(int page_index);
 static size_t pages_used_size = 0;
 static u64 *pages_used = NULL;
 
+/* Copy form linux/bitops.h */
 void __clear_bit(long nr, unsigned long *addr)
 {
     addr[nr >> _BITOPS_LONG_SHIFT] &= ~(1UL << nr);
@@ -31,6 +33,7 @@ void __set_bit(long nr, unsigned long *addr)
     addr[nr >> _BITOPS_LONG_SHIFT] |= 1UL << (nr & (BITS_PER_LONG - 1));
 }
 
+/* Get memory address from page */
 void *kmap_local_page(struct page *page)
 {
     return page;
