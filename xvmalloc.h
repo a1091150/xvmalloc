@@ -12,8 +12,8 @@
 
 #ifndef _XV_MALLOC_H_
 #define _XV_MALLOC_H_
-#include "types.h"
 #include "test_page.h"
+#include "types.h"
 struct xv_pool;
 
 struct xv_pool *xv_create_pool(void);

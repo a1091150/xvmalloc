@@ -1,5 +1,6 @@
 #ifndef _TEST_PAGE_H
 #define _TEST_PAGE_H
+#include <stdbool.h>
 #include <stddef.h>
 struct page {
     void *ptr;

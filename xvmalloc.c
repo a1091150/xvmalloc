@@ -45,9 +45,10 @@ static void clear_flag(struct block_header *block, enum blockflags flag)
  */
 static void *get_ptr_atomic(struct page *page, u16 offset)
 {
-    unsigned char *base;
-    base = kmap_local_page(page);
-    return base + offset;
+    size_t base;
+    base = (size_t) kmap_local_page(page);
+    base = base + offset;
+    return (void *) base;
 }
 
 static void put_ptr_atomic(void *ptr)

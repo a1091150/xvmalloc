@@ -12,8 +12,8 @@
 
 #ifndef _XV_MALLOC_INT_H_
 #define _XV_MALLOC_INT_H_
-#include "types.h"
 #include "test_page.h"
+#include "types.h"
 
 /* User configurable params */
 
