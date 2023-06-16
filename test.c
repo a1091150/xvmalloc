@@ -209,6 +209,9 @@ static void run_alloc_benchmark(size_t loops,
                 blk_offset_array[next_idx] = offset;
             }
         }
+
+        if (clear)
+            memset(blk_array[next_idx], 0, blk_size);
     }
 
     for (size_t i = 0; i < num_blks; i++) {
@@ -292,8 +295,8 @@ int bench_main(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    // MAX_PAGES = 20 * TLSF_MAX_SIZE / PAGE_SIZE;
-    MAX_PAGES = 64;
+    MAX_PAGES = 20 * TLSF_MAX_SIZE / PAGE_SIZE;
+    // MAX_PAGES = 64;
     start_addr = mmap(0, MAX_PAGES * PAGE_SIZE, PROT_READ | PROT_WRITE,
                       MAP_ANONYMOUS | MAP_PRIVATE | MAP_NORESERVE, -1, 0);
 
