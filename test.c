@@ -210,8 +210,11 @@ static void run_alloc_benchmark(size_t loops,
             }
         }
 
-        if (clear)
-            memset(blk_array[next_idx], 0, blk_size);
+        if (clear && blk_array[next_idx]) {
+            char *addr = blk_array[next_idx];
+            u32 offset = blk_offset_array[next_idx];
+            memset(addr + offset, 0, blk_size);
+        }
     }
 
     for (size_t i = 0; i < num_blks; i++) {
